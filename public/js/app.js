@@ -13,6 +13,7 @@ angular.module('myApp', [
     // 3rd party dependencies
     'btford.socket-io',
     'toaster',
+    'ui.bootstrap',
     'ui.calendar'
 
 ]).
@@ -29,6 +30,14 @@ angular.module('myApp', [
             when('/macchinari', {
                 templateUrl: 'partials/macchinari',
                 controller: 'MyCtrl2'
+            }).
+            when('/user_detail', {
+                templateUrl: 'partials/user_detail',
+                controller: 'UserCtrl'
+            }).
+            when('/users', {
+                templateUrl: 'partials/users',
+                controller: 'UserCtrl'
             }).
             otherwise({
                 redirectTo: '/overview'

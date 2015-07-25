@@ -3,15 +3,33 @@ h1.page-header Macchinari
 
     h2.sub-header
         .row
-            .col-sm-1
-                li.list-group-item.printer-number 20
-            .col-sm-8
-                ul.list-group
-                    li.list-group-item 
-                        //span.badge 15
-                        | 3D printer
-
+            .col-sm-6
+                .radio
+                    label
+                        input#optionsRadios1(type="radio", name="optionsRadios", value="option1",checked=true)
+                    |Stampante 3D n°1
+                .radio
+                    label
+                        input#optionsRadios2(type="radio", name="optionsRadios", value="option2")
+                    |Stampante 3D n°2
+                .radio
+                    label
+                        input#optionsRadios3(type="radio", name="optionsRadios", value="option3")
+                    |Cutter Laser
+            .col-sm-6
+                .radio
+                    label
+                        input#optionsRadios1(type="radio", name="optionsRadios", value="option1")
+                    |Stampante ad alta definizione
+                .radio
+                    label
+                        input#optionsRadios2(type="radio", name="optionsRadios", value="option2")
+                    |Labs
+                .radio
+                    label
+                        input#optionsRadios3(type="radio", name="optionsRadios", value="option3")
+                    |
     h2.sub-header calendario
         .row
             .col-sm-8.col-sm-offset-2
-                .calendar(ng-model="eventSources", calendar="myCalendar1", ui-calendar="{{calendarConfig}}" )
+                .calendar#calendar_mini(ng-model="eventSources", calendar="myCalendar1", ui-calendar="{{calendarConfig}}" )

@@ -1,0 +1,33 @@
+h1.page-header Utenti
+
+.col-md-10.col-md-offset-1.toppad
+    .panel.panel-default
+        .panel-heading Profili
+        table.table
+            thead
+                tr
+                    th #
+                    th Nome
+                    th Cognome
+                    th Livello
+            tbody
+                tr.hover(ng-click="go('/user_detail')")
+                    th(scope='row') 1
+                    td Edoardo
+                    td Vallebella
+                    td 3
+                tr.hover(ng-click="go('/user_detail')")
+                    th(scope='row') 2
+                    td Davide
+                    td De Luca
+                    td 2
+                tr.hover(ng-click="go('/user_detail')")
+                    th(scope='row') 3
+                    td Alessandro
+                    td Francia
+                    td 3
+                tr.hover(ng-click="go('/user_detail')")
+                    th(scope='row') 4
+                    td Lachie
+                    td Cognome
+                    td 1

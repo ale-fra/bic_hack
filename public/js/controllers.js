@@ -90,17 +90,17 @@ angular.module('myApp.controllers', []).
             console.log(date.title + ' was clicked ');
         };
         $scope.calendarConfig = {
-                height: 450,
-                editable: true,
-                header: {
-                    left: 'title',
-                    center: '',
-                    right: 'today prev,next'
-                },
-                eventClick: $scope.alertOnEventClick,
-                eventDrop: $scope.alertOnDrop,
-                eventResize: $scope.alertOnResize,
-                eventRender: $scope.eventRender,
+            height: 450,
+            editable: true,
+            header: {
+                left: 'title',
+                center: '',
+                right: 'today prev,next'
+            },
+            eventClick: $scope.alertOnEventClick,
+            eventDrop: $scope.alertOnDrop,
+            eventResize: $scope.alertOnResize,
+            eventRender: $scope.eventRender,
 
             'businessHours': {
                 start: '10:00', // a start time (10am in this example)
@@ -116,9 +116,7 @@ angular.module('myApp.controllers', []).
         };
         $scope.eventSources = [];
         if (uiCalendarConfig.calendars['myCalendar1']) {
-
-            uiCalendarConfig.calendars['myCalendar1'].
-                uiCalendarConfig.calendars['myCalendar1'].fullCalendar('render');
+             uiCalendarConfig.calendars['myCalendar1'].fullCalendar('render');
         }
 
         setTimeout(function () {
@@ -139,4 +137,89 @@ angular.module('myApp.controllers', []).
 
             return array
         };
-    }]);
+    }]).
+    controller('UserCtrl', ['$scope', 'socket', '$modal', '$location','uiCalendarConfig', function ($scope, socket, $modal, $location,uiCalendarConfig) {
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+
+        $scope.go = function (path) {
+            $location.path(path);
+        };
+
+
+        $scope.open_calendar= function(){
+            var modalInstance = $modal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: '/partials/myUserCalendar',
+                controller: 'UserCtrl',
+                size: 'lg'
+
+            });
+        };
+
+
+
+        $scope.calendarConfig = {
+            height: 700,
+            editable: true,
+            header: {
+                left: 'title',
+                center: '',
+                right: 'today prev,next'
+            },
+            eventClick: $scope.alertOnEventClick,
+            eventDrop: $scope.alertOnDrop,
+            eventResize: $scope.alertOnResize,
+            eventRender: $scope.eventRender,
+
+            'businessHours': {
+                start: '10:00', // a start time (10am in this example)
+                end: '18:00', // an end time (6pm in this example)
+
+                dow: [1, 2, 3, 4, 5]
+                // days of week. an array of zero-based day of week integers (0=Sunday)
+                // (Monday-Thursday in this example)
+            },
+            'dayNames': ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Domenica"],
+            'dayNamesShort': ["Dom", "Lub", "Mar", "Mer", "Gio", "Ven", "Sab"]
+
+        };
+
+        //$scope.events : [
+        //
+        //    {title: 'TEST',start: new Date(2015, 7, 25, 19, 0),end: new Date(2015, 7, 25, 22, 30),allDay: false}
+        //    //{title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
+        //];
+
+        $scope.users = [{
+            'Professione': 'CEO presso SmartBadge',
+            'Data di registrazione': '06/11/2014',
+            'Data di nascita': '28/07/1994',
+            'Sesso' :   'Uomo',
+            'Residenza': 'Roma, Via Merulana 199, 00100',
+            'Email': 'edoardo.vallebella@gmail.com',
+            'Cellulare': '339-2951740 (cell)'
+        }];
+        $scope.eventSources = [[
+
+             {title: 'Stampa 3D',start: new Date(y, m, 1),end: new Date(y, m, 2)},
+             {title: 'Postazione',start: new Date(y, m, 3),end: new Date(y, m, 4)},
+            {title: 'Cutter',start: new Date(y, m, 6),end: new Date(y, m, 7)},
+
+            {title: 'Postazione',start: new Date(y, m, 7),end: new Date(y, m, 8)},
+             {title: 'Postazione',start: new Date(y, m, 14),end: new Date(y, m, 15)},
+             {title: 'Stampa 3D',start: new Date(y, m, 15),end: new Date(y, m, 16)},
+            {title: 'Lab',start: new Date(y, m, 19),end: new Date(y, m, 20)},
+            {title: 'Hackhaton',start: new Date(y, m, 24),end: new Date(y, m, 26)}
+
+        ]];
+        if (uiCalendarConfig.calendars['myCalendar1']) {
+
+                uiCalendarConfig.calendars['myCalendar1'].fullCalendar('render');
+        }
+
+    }]
+);

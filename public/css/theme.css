@@ -111,6 +111,6 @@ body {
 }
 
 
-body .fc{
+body  #calendar_mini.fc{
     font-size: 0.5em !important;
 }

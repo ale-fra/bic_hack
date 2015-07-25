@@ -1,0 +1,80 @@
+h1.page-header Utente
+
+.col-md-10.col-md-offset-1.toppad
+    .panel.panel-info
+        .panel-heading
+            h3.panel-title Edoardo Vallebella
+        .panel-body
+            .row
+                .col-md-3.col-lg-3(align='center')
+                    img.img-responsive(alt='Immagine di profilo', src='/img/edoardo_vallebella.png')
+                .col-md-9.col-lg-9
+                    table.table.table-user-information
+                        tbody
+                            tr
+                                td Professione:
+                                td CEO presso SmartBadge
+                            tr
+                                td Data di registrazione:
+                                td 06/11/2014
+                            tr
+                                td Data di nascita
+                                td 28/07/1994
+                            tr
+                                td Sesso
+                                td Uomo
+                            tr
+                                td Residenza
+                                td Roma, Via Merulana 199, 00100
+                            tr
+                                td Email
+                                td
+                                    a(href='mailto:edoardo.vallebella@gmail.com') edoardo.vallebella@gmail.com
+                            tr
+                                td Cellulare
+                                td 339-2951740 (cell)
+                            tr
+                                td Autorizzazioni
+                                td Livello 3
+                            tr
+                                td Storia
+                                td
+                                    a Visualizza
+                    .col-md-8.col-md-offset-2
+                        .panel.panel-info
+                            .panel-heading
+                                h4.panel-title Prenotazioni
+                                    span.glyphicon.glyphicon-calendar.pull-right(ng-click="open_calendar('lg')")
+                            .panel-body
+                                table.table.table-user-information
+                                    tbody
+                                        tr(align='center')
+                                            td Macchinario
+                                            td Esperienza
+                                            td Lvl
+                                        tr(align='center')
+                                            td 10:00 - 11:30 Stampante 3D
+                                            td 23h
+                                            td 7/10
+                                        tr(align='center')
+                                            td 12:00 - 12:30 Cutter Laser
+                                            td 3h
+                                            td 2/10
+
+
+
+
+
+                    //a.btn.btn-primary(href='#') My Sales Performance
+                    //a.btn.btn-primary(href='#') Team Sales Performance
+
+        .panel-footer
+            a.btn.btn-sm.btn-primary(data-original-title='Broadcast Message', data-toggle='tooltip', type='button')
+                i.glyphicon.glyphicon-envelope
+
+            span.pull-right
+                a.btn.btn-sm.btn-warning(href='edit.html', data-original-title='Edit this user', data-toggle='tooltip', type='button')
+                    i.glyphicon.glyphicon-edit
+
+                a.btn.btn-sm.btn-danger(data-original-title='Remove this user', data-toggle='tooltip', type='button')
+                    i.glyphicon.glyphicon-remove
