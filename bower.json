@@ -1,0 +1,28 @@
+{
+  "name": "application-name",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-socket-io": "~0.3.0",
+    "angular-route": "~1.4.3",
+    "angular-bootstrap": "~0.13.0",
+    "bootstrap": "~3.3.5",
+    "foundation": "~5.3.3",
+    "angularjs-toaster": "~0.4.15",
+    "angular-ui-calendar": "~1.0.1"
+  },
+  "homepage": "https://github.com/btford/angular-socket-io-seed",
+  "license": "MIT",
+  "resolutions": {
+    "angular": "1.4.3"
+  }
+}

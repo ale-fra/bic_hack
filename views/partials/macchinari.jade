@@ -1,0 +1,17 @@
+toaster-container(toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}")
+h1.page-header Macchinari
+
+    h2.sub-header
+        .row
+            .col-sm-1
+                li.list-group-item.printer-number 20
+            .col-sm-8
+                ul.list-group
+                    li.list-group-item 
+                        //span.badge 15
+                        | 3D printer
+
+    h2.sub-header calendario
+        .row
+            .col-sm-8.col-sm-offset-2
+                .calendar(ng-model="eventSources", calendar="myCalendar1", ui-calendar="{{calendarConfig}}" )

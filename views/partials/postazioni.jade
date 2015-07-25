@@ -1,0 +1,8 @@
+toaster-container(toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}")
+h1.page-header Stanze
+
+    h2.sub-header
+    .row.placeholders
+        .col-sm-6.room-display(ng-repeat="room in rooms", ng-class="{'empty': room.current < room.capacity/2, 'middle': room.current >= room.capacity/2 && room.current < room.capacity, 'full' : room.current == room.capacity }")
+            h4 {{room.name}}
+            | {{room.current}} / {{room.capacity}}
