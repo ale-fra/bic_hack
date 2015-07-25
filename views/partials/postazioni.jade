@@ -3,6 +3,7 @@ h1.page-header Stanze
 
     h2.sub-header
     .row.placeholders
-        .col-sm-6.room-display(ng-repeat="room in rooms", ng-class="{'empty': room.current < room.capacity/2, 'middle': room.current >= room.capacity/2 && room.current < room.capacity, 'full' : room.current == room.capacity }")
+        .col-sm-6.room-display(ng-repeat="room in rooms")
             h4 {{room.name}}
+            .circle-state(ng-class="{'green': room.current < room.capacity/2, 'yellow': room.current >= room.capacity/2 && room.current < room.capacity, 'red' : room.current == room.capacity }")
             | {{room.current}} / {{room.capacity}}

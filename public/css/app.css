@@ -29,12 +29,16 @@
   border-radius: 50%;
   display: inline-block;
   margin-left: 10px;
+  margin-right: 10px;
 }
 .circle-state.red{
   background-color: red;
 }
 .circle-state.green{
   background-color: green;
+}
+.circle-state.yellow{
+  background-color: #FF9306;
 }
 
 .room-display {
@@ -58,36 +62,6 @@
   display: block;
   color: #646464;
   text-shadow: 0px 1px 1px #fff;
-}
-
-.room-display.empty{
-  color: #000;
-  background-color: green;
-  background-image: -moz-linear-gradient(top, green, #AEE839);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(green), to(#AEE839));
-  background-image: -webkit-linear-gradient(top, green, #AEE839);
-  background-image: -o-linear-gradient(top, green, #AEE839);
-  background-image: linear-gradient(to bottom, green, #AEE839);
-}
-
-.room-display.middle{
-  color: #000;
-  background-color: #BF9B00;
-  background-image: -moz-linear-gradient(top, #BF9B00, #FFCF00);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#BF9B00), to(#FFCF00));
-  background-image: -webkit-linear-gradient(top, #BF9B00, #FFCF00);
-  background-image: -o-linear-gradient(top, #BF9B00, #FFCF00);
-  background-image: linear-gradient(to bottom, #BF9B00, #FFCF00);
-}
-
-.room-display.full{
-  color: #000;
-  background-color: #C10000;
-  background-image: -moz-linear-gradient(top, #C10000, #FF5246);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#C10000), to(#FF5246));
-  background-image: -webkit-linear-gradient(top, #C10000, #FF5246);
-  background-image: -o-linear-gradient(top, #C10000, #FF5246);
-  background-image: linear-gradient(to bottom, #C10000, #FF5246);
 }
 
 
