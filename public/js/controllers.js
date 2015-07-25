@@ -3,10 +3,16 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-    controller('AppCtrl', ['$scope', 'socket', 'toaster', function ($scope, socket, toaster) {
+    controller('AppCtrl', ['$scope', 'socket', 'toaster','$location', function ($scope, socket, toaster,$location) {
         socket.on('send:name', function (data) {
             $scope.name = data.name;
         });
+        socket.on('goto:profile',function(){
+            $scope.go('/user_detail');
+        });
+        $scope.go = function (path) {
+            $location.path(path);
+        };
     }]).
     controller('MyCtrl1', ['$scope', 'socket', 'toaster', function ($scope, socket, toaster) {
         window.sok = socket; //TODO TEST

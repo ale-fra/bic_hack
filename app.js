@@ -52,10 +52,10 @@ app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
+
 app.get('/api/name', api.name);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
 
 
 var register_socket = require('./sockets');
@@ -69,14 +69,21 @@ register_socket.add(logger);
 register_socket.add(example);
 register_socket.add(door);
 register_socket.add(machines);
-io.sockets.on('connection', register_socket.register(app));
+var _socket;
+io.sockets.on('connection', function(socket){
+    _socket = socket;
+    register_socket.register(app)(socket)
+});
 
 
-
+app.get('/api/profile',function(){
+    _socket.emit('goto:profile');
+});
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/nfc');
 
 
+app.get('*', routes.index);
 
 /**
  * Start Server
