@@ -7,7 +7,7 @@ h1.page-header Dashboard
             h4 {{key.name}}
             span.text-muted
                 |{{key.state === 0 ? "Chiusa" : key.state === 1 ? "Aperta" : "Errore"}}
-                .circle-state(ng-class="{'red': key.state == 0 || key.state ==2, '#64ae58' : key.state == 1 }")
+                .circle-state(ng-class="{'red': key.state == 0 || key.state ==2, 'green' : key.state == 1 }")
 
     h2.sub-header Macchine da laboratorio
     h4 Oggi

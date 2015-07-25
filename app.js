@@ -79,6 +79,13 @@ app.get('*/api/profile',function(req,res,next){
     _socket.emit('goto:profile');
     res.send();
 });
+app.get('*/api/door',function(req,res,next){
+    _socket.emit('send:open_door', {'result_code': 0, 'door_id': '55b24d1777984aed55f8d331'});
+    setTimeout(function(){
+        _socket.emit('send:close_door', {'result_code': 0, 'door_id': '55b24d1777984aed55f8d331'});
+    },5000);
+    res.send();
+});
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/nfc');
 

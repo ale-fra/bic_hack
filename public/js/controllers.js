@@ -50,7 +50,7 @@ angular.module('myApp.controllers', []).
         socket.on('send:open_door', function (data) {
             if (data.result_code == 0) {
                 //alert('aprendo la porta : ' + data.door_id);
-                toaster.pop('success', "Approved", 'aprendo la porta : ' + data.door_id);
+                toaster.pop('success', "Approved", 'Edoardo Vallebella sta accedendo al LAB 3D');
                 $scope.doors[data.door_id].state = 1;
 
             } else if (data.result_code == -1) {
