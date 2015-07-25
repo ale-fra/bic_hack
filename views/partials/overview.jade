@@ -7,11 +7,139 @@ h1.page-header Dashboard
             h4 {{key.name}}
             span.text-muted
                 |{{key.state === 0 ? "Chiusa" : key.state === 1 ? "Aperta" : "Errore"}}
-                .circle-state(ng-class="{'red': key.state == 0 || key.state ==2, 'green' : key.state == 1 }")
+                .circle-state(ng-class="{'red': key.state == 0 || key.state ==2, '#64ae58' : key.state == 1 }")
+
     h2.sub-header Macchine da laboratorio
+    h4 Oggi
     .row.placeholders
-        .col-xs-6.col-sm-3.placeholder.gray-box(ng-repeat="(val,key) in machines", ng-click="doorClick(val)")
-            h4 {{key.name}}
-            span.text-muted
-                |{{key.state === 0 ? "spenta" : key.state === 1 ? "in funzione" : "Errore"}}
-                .circle-state(ng-class="{'red': key.state == 0 || key.state ==2, 'green' : key.state == 1 }")
+        //- .col-xs-6.col-sm-3.placeholder.gray-box(ng-repeat="(val,key) in machines", ng-click="doorClick(val)")
+        //-     h4 {{key.name}}
+        //-     span.text-muted
+        //-         |{{key.state === 0 ? "spenta" : key.state === 1 ? "in funzione" : "Errore"}}
+        //-         .circle-state(ng-class="{'red': key.state == 0 || key.state ==2, '#64ae58' : key.state == 1 }")
+
+        .col-xs-12
+            table.table-bordered
+                tbody
+                    tr
+                        td.placeholder-cell
+                        td.placeholder-cell Sala conferenze
+                        td.placeholder-cell Talent
+                        td.placeholder-cell Taglio Laser
+                        td.placeholder-cell Stampante 3D
+                    tr
+                        td.placeholder-cell(style="color: black;") 9am
+                        td.placeholder-cell
+                            | 3/7
+                            .circle-state.green
+                        td.placeholder-cell
+                            | 2/3
+                            .circle-state.green
+                        td.placeholder-cell Angelo
+                        td.placeholder-cell
+                            .circle-state.green
+                    tr
+                        td.placeholder-cell(style="color: black;") 10am
+                        td.placeholder-cell
+                            | 3/7
+                            .circle-state.green
+                        td.placeholder-cell
+                            | 1/3
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                        td.placeholder-cell Roberta
+                    tr
+                        td.placeholder-cell(style="color: black;") 11am
+                        td.placeholder-cell
+                            | 7/7
+                            .circle-state.red
+                        td.placeholder-cell
+                            | 0/3
+                            .circle-state.green
+                        td.placeholder-cell Davide
+                        td.placeholder-cell
+                            .circle-state.green
+
+                    tr
+                        td.placeholder-cell(style="color: black;") 12pm
+                        td.placeholder-cell
+                            | 7/7
+                            .circle-state.red
+                        td.placeholder-cell
+                            | 0/3
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                        td.placeholder-cell Allesandro
+                    tr
+                        td.placeholder-cell(style="color: black;") 1pm
+                        td.placeholder-cell
+                            | 2/7
+                            .circle-state.green
+                        td.placeholder-cell
+                            | 2/3
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                    tr
+                        td.placeholder-cell(style="color: black;") 2pm
+                        td.placeholder-cell
+                            | 2/7
+                            .circle-state.green
+                        td.placeholder-cell
+                            | 3/3
+                            .circle-state.red
+                        td.placeholder-cell
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                    tr
+                        td.placeholder-cell(style="color: black;") 3pm
+                        td.placeholder-cell
+                            | 4/7
+                            .circle-state.green
+                        td.placeholder-cell
+                            | 0/3
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                    tr
+                        td.placeholder-cell(style="color: black;") 4pm
+                        td.placeholder-cell
+                            | 3/7
+                            .circle-state.green
+                        td.placeholder-cell
+                            | 1/3
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                    tr
+                        td.placeholder-cell(style="color: black;") 5pm
+                        td.placeholder-cell
+                            | 4/7
+                            .circle-state.green
+                        td.placeholder-cell
+                            | 2/3
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                    tr
+                        td.placeholder-cell(style="color: black;") 6pm
+                        td.placeholder-cell
+                            | 3/7
+                            .circle-state.green
+                        td.placeholder-cell
+                            | 1/3
+                            .circle-state.green
+                        td.placeholder-cell
+                            .circle-state.green
+                        td.placeholder-cell Davide

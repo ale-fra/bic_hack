@@ -89,6 +89,6 @@ app.get('*', routes.index);
  * Start Server
  */
 
-server.listen(80, function () {
+server.listen(3000, function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
