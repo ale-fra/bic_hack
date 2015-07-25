@@ -17,6 +17,8 @@ angular.module('myApp.controllers', []).
     controller('MyCtrl1', ['$scope', 'socket', 'toaster', function ($scope, socket, toaster) {
         window.sok = socket; //TODO TEST
 
+        $scope.hours = [6,7,8,9,10,11,12,1,2,3,4,5]
+
         socket.emit('request:get-doors');
         socket.on('send:get-doors', function (data) {
             var door = $scope.doors = {};
@@ -209,6 +211,7 @@ angular.module('myApp.controllers', []).
             'Email': 'edoardo.vallebella@gmail.com',
             'Cellulare': '339-2951740 (cell)'
         }];
+        // fill calendar with fake events
         $scope.eventSources = [[
 
              {title: 'Stampa 3D',start: new Date(y, m, 1),end: new Date(y, m, 2)},
