@@ -48,12 +48,11 @@ mongodb_schema.init();
  */
 
 // serve index and view partials
-app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
 
-app.get('/api/name', api.name);
+//app.get('*/api/name', api.name);
 
 // redirect all others to the index (HTML5 history)
 
@@ -76,8 +75,9 @@ io.sockets.on('connection', function(socket){
 });
 
 
-app.get('/api/profile',function(){
+app.get('*/api/profile',function(req,res,next){
     _socket.emit('goto:profile');
+    res.send();
 });
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/nfc');
@@ -89,6 +89,6 @@ app.get('*', routes.index);
  * Start Server
  */
 
-server.listen(app.get('port'), function () {
+server.listen(80, function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
